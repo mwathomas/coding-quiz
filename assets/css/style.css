@@ -1,0 +1,67 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #093145;
+  color: whitesmoke;
+}
+
+h1 {
+  text-align: center;
+  letter-spacing: 0.25em;
+  height: 40px;
+}
+
+#start {
+  display: flex;
+  width: 100%;
+  height: 40px;
+}
+
+button {
+  width: 100%;
+  height: 100%;
+}
+
+.timer {
+  display: flex;
+  width: 200px;
+  height: 40px;
+}
+
+div {
+  display: block;
+  float: left;
+  width: 90%;
+  height: 50px;
+  margin: 1%;
+  cursor: pointer;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
+  transition: 0.3s;
+}
+
+.answers {
+  border-radius: 0px;
+  box-shadow: 0 0 0 0;
+  height: 200px;
+}
+
+.question {
+  display: block;
+  float: left;
+  width: 70%;
+  height: 50px;
+  margin: 1%;
+  cursor: pointer;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
+  transition: 0.3s;
+  font-size: 30px;
+}
