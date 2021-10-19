@@ -32,7 +32,7 @@ var myQuestions = [
 
 function countdown() {
   var i = 0;
-  var timeLeft = 100;
+  var timeLeft = 20;
   var timeInterval = setInterval(function () {
     timeLeft--;
     timerEl.textContent = timeLeft + " seconds";
