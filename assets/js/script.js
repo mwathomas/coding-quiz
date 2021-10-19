@@ -3,7 +3,6 @@ var questionEl = document.getElementById("question");
 var aEl = document.getElementById("a");
 var bEl = document.getElementById("b");
 var cEl = document.getElementById("c");
-
 var myQuestions = [
   {
     question: "What is JavaScript most commonly used for?",
@@ -21,49 +20,105 @@ var myQuestions = [
       { c: "It is not oriented", answer: false },
     ],
   },
+  {
+    question: "What is 2+2?",
+    answers: [
+      { a: "2", answer: true },
+      { b: "4", answer: false },
+      { c: "5", answer: false },
+    ],
+  },
 ];
 
-currentQuestion = myQuestions[0].question;
-currentA = myQuestions[0].answers[0].a;
-currentB = myQuestions[0].answers[1].b;
-currentC = myQuestions[0].answers[2].c;
-aAnswer = myQuestions[0].answers[0].answer;
-bAnswer = myQuestions[0].answers[1].answer;
-cAnswer = myQuestions[0].answers[2].answer;
-
 function countdown() {
+  var i = 0;
   var timeLeft = 100;
   var timeInterval = setInterval(function () {
     timeLeft--;
     timerEl.textContent = timeLeft + " seconds";
-
-    if (timeLeft === 0) {
+    if (timeLeft <= 0) {
       clearInterval(timeInterval);
+      alert("GAME OVER");
+      currentQuestion = 0;
+      currentA = 0;
+      currentB = 0;
+      currentC = 0;
+      aAnswer = "true";
+      bAnswer = "true";
+      cAnswer = "true";
+      questionEl.textContent = currentQuestion;
+      aEl.textContent = currentA;
+      bEl.textContent = currentB;
+      cEl.textContent = currentC;
+      return;
     }
   }, 1000);
+  currentQuestion = myQuestions[i].question;
+  currentA = myQuestions[i].answers[0].a;
+  currentB = myQuestions[i].answers[1].b;
+  currentC = myQuestions[i].answers[2].c;
+  aAnswer = myQuestions[i].answers[0].answer;
+  bAnswer = myQuestions[i].answers[1].answer;
+  cAnswer = myQuestions[i].answers[2].answer;
   questionEl.textContent = currentQuestion;
   aEl.textContent = currentA;
   bEl.textContent = currentB;
   cEl.textContent = currentC;
+
   aEl.addEventListener("click", function () {
     if ((aAnswer = "false")) {
       timeLeft -= 10;
       timerEl.textContent = timeLeft + " seconds";
+      i++;
+      currentQuestion = myQuestions[i].question;
+      currentA = myQuestions[i].answers[0].a;
+      currentB = myQuestions[i].answers[1].b;
+      currentC = myQuestions[i].answers[2].c;
+      aAnswer = myQuestions[i].answers[0].answer;
+      bAnswer = myQuestions[i].answers[1].answer;
+      cAnswer = myQuestions[i].answers[2].answer;
+      questionEl.textContent = currentQuestion;
+      aEl.textContent = currentA;
+      bEl.textContent = currentB;
+      cEl.textContent = currentC;
     }
-    currentQuestion = myQuestions[1].question;
-    currentA = myQuestions[1].answers[0].a;
-    currentB = myQuestions[1].answers[1].b;
-    currentC = myQuestions[1].answers[2].c;
-    aAnswer = myQuestions[1].answers[0].answer;
-    bAnswer = myQuestions[1].answers[1].answer;
-    cAnswer = myQuestions[1].answers[2].answer;
-    questionEl.textContent = currentQuestion;
-    aEl.textContent = currentA;
-    bEl.textContent = currentB;
-    cEl.textContent = currentC;
+  });
+  bEl.addEventListener("click", function () {
+    if ((aAnswer = "false")) {
+      timeLeft -= 10;
+      timerEl.textContent = timeLeft + " seconds";
+      i++;
+      currentQuestion = myQuestions[i].question;
+      currentA = myQuestions[i].answers[0].a;
+      currentB = myQuestions[i].answers[1].b;
+      currentC = myQuestions[i].answers[2].c;
+      aAnswer = myQuestions[i].answers[0].answer;
+      bAnswer = myQuestions[i].answers[1].answer;
+      cAnswer = myQuestions[i].answers[2].answer;
+      questionEl.textContent = currentQuestion;
+      aEl.textContent = currentA;
+      bEl.textContent = currentB;
+      cEl.textContent = currentC;
+    }
+  });
+  cEl.addEventListener("click", function () {
+    if ((aAnswer = "false")) {
+      timeLeft -= 10;
+      timerEl.textContent = timeLeft + " seconds";
+      i++;
+      currentQuestion = myQuestions[i].question;
+      currentA = myQuestions[i].answers[0].a;
+      currentB = myQuestions[i].answers[1].b;
+      currentC = myQuestions[i].answers[2].c;
+      aAnswer = myQuestions[i].answers[0].answer;
+      bAnswer = myQuestions[i].answers[1].answer;
+      cAnswer = myQuestions[i].answers[2].answer;
+      questionEl.textContent = currentQuestion;
+      aEl.textContent = currentA;
+      bEl.textContent = currentB;
+      cEl.textContent = currentC;
+    }
   });
 }
 
 start.addEventListener("click", countdown);
-
-// function newQuestion(event) {
