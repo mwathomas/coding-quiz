@@ -14,7 +14,7 @@ Click the start button. A first question and corresponding answers will appear.
 
 ![Final Output](assets/images/finalpage.jpg)
 
-Link: https://mwathomas.github.io/coding-quiz/
+[a link] https://mwathomas.github.io/coding-quiz/
 
 Next steps to be built out could be different types of questions, such as True/False, multiple selection, etc.
 

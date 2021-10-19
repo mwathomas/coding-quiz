@@ -27,6 +27,9 @@ currentQuestion = myQuestions[0].question;
 currentA = myQuestions[0].answers[0].a;
 currentB = myQuestions[0].answers[1].b;
 currentC = myQuestions[0].answers[2].c;
+aAnswer = myQuestions[0].answers[0].answer;
+bAnswer = myQuestions[0].answers[1].answer;
+cAnswer = myQuestions[0].answers[2].answer;
 
 function countdown() {
   var timeLeft = 100;
@@ -42,17 +45,25 @@ function countdown() {
   aEl.textContent = currentA;
   bEl.textContent = currentB;
   cEl.textContent = currentC;
-
-  a.addEventListener("click", function () {
-    for (i = 1; i < myQuestions.length; i++) {
-      currentQuestion = myQuestions[i].question;
-      currentA = myQuestions[i].answers[0].a;
-      currentB = myQuestions[i].answers[1].b;
-      currentC = myQuestions[i].answers[2].c;
+  aEl.addEventListener("click", function () {
+    if ((aAnswer = "false")) {
+      timeLeft -= 10;
+      timerEl.textContent = timeLeft + " seconds";
     }
+    currentQuestion = myQuestions[1].question;
+    currentA = myQuestions[1].answers[0].a;
+    currentB = myQuestions[1].answers[1].b;
+    currentC = myQuestions[1].answers[2].c;
+    aAnswer = myQuestions[1].answers[0].answer;
+    bAnswer = myQuestions[1].answers[1].answer;
+    cAnswer = myQuestions[1].answers[2].answer;
+    questionEl.textContent = currentQuestion;
+    aEl.textContent = currentA;
+    bEl.textContent = currentB;
+    cEl.textContent = currentC;
   });
 }
 
 start.addEventListener("click", countdown);
 
-function game() {}
+// function newQuestion(event) {
