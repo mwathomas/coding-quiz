@@ -32,7 +32,7 @@ var myQuestions = [
 
 function countdown() {
   var i = 0;
-  var timeLeft = 20;
+  var timeLeft = 30;
   var timeInterval = setInterval(function () {
     timeLeft--;
     timerEl.textContent = timeLeft + " seconds";
@@ -67,7 +67,7 @@ function countdown() {
 
   aEl.addEventListener("click", function () {
     if ((aAnswer = "false")) {
-      timeLeft -= 10;
+      timeLeft -= 5;
       timerEl.textContent = timeLeft + " seconds";
       i++;
       currentQuestion = myQuestions[i].question;
@@ -84,8 +84,8 @@ function countdown() {
     }
   });
   bEl.addEventListener("click", function () {
-    if ((aAnswer = "false")) {
-      timeLeft -= 10;
+    if ((bAnswer = "false")) {
+      timeLeft -= 5;
       timerEl.textContent = timeLeft + " seconds";
       i++;
       currentQuestion = myQuestions[i].question;
@@ -102,8 +102,8 @@ function countdown() {
     }
   });
   cEl.addEventListener("click", function () {
-    if ((aAnswer = "false")) {
-      timeLeft -= 10;
+    if ((cAnswer = "false")) {
+      timeLeft -= 5;
       timerEl.textContent = timeLeft + " seconds";
       i++;
       currentQuestion = myQuestions[i].question;
