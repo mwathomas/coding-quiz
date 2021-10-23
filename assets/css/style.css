@@ -6,8 +6,8 @@
 
 body {
   font-family: sans-serif;
-  background-color: #093145;
-  color: whitesmoke;
+  background-color: rgb(136, 156, 182);
+  color: rgb(253, 252, 252);
 }
 
 h1 {
@@ -64,4 +64,9 @@ div {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
   transition: 0.3s;
   font-size: 30px;
+}
+#scores {
+  position: relative;
+  bottom: -100px;
+  height: 100px;
 }
